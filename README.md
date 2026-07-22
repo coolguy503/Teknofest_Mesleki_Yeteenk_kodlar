@@ -1,0 +1,1 @@
+Proje notlar/readme
