@@ -6,7 +6,7 @@ import os
 
 # --- AYARLAR ---
 # İşletim sistemine göre COM portunu ayarla (Örn: Windows için 'COM3', Linux için '/dev/ttyUSB0')
-SERIAL_PORT = 'COM3'
+SERIAL_PORT = '/dev/ttyUSB0'
 BAUD_RATE = 115200
 JSON_FILE = 'konumlar.json'
 
