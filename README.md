@@ -29,3 +29,22 @@ README/PDF dosyalarına bakınız.
 
 - Step Motor Sürücü: DM556, PUL=D2, DIR=D3, 1/8 mikro adım (1600 adım/tur)
 - MQTT: paho-mqtt 2.1.0, mosquitto broker, topic: `arac/yuk`
+
+## Nasıl Çalıştırılır (Genel Akış)
+
+1. **Görev 1 (algoritma.pdf):** Sadece dokümantasyon, çalıştırma gerekmez.
+
+2. **Görev 2 (Arayüz + Step Motor):**
+   - `motor.ino`'yu Arduino IDE veya `arduino-cli` ile Arduino Uno'ya yükle
+     (DM556 sürücü bağlantısı: PUL=D2, DIR=D3, 1/8 mikro adım).
+   - `arayuz.py` içindeki `SERIAL_PORT` değerini kendi portunla değiştir.
+   - Çalıştır: `python arayuz.py`
+
+3. **Görev 4 (MQTT):**
+   - Broker bilgisayarında mosquitto kur ve başlat
+     (`listener 1883`, `allow_anonymous true` ayarlı).
+   - Aynı bilgisayarda: `python yayinci.py`
+   - Karşı bilgisayarda (`dinleyici.py` içindeki `BROKER_IP`'yi broker'ın
+     IP'siyle güncelleyip): `python dinleyici.py`
+   - İki bilgisayarın aynı ağda olduğundan ve 1883 portunun firewall'da
+     açık olduğundan emin ol.
