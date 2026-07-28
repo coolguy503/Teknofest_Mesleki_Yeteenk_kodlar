@@ -33,7 +33,7 @@ class MotorKontrolArayuzu:
         self.durum_sorgula()
 
     def json_yukle(self):
-        """Uygulama açıldığında JSON dosyasını okur veya yoksa oluşturur."""
+        # Uygulama açıldığında JSON dosyasını okur veya yoksa oluşturur
         if os.path.exists(JSON_FILE):
             with open(JSON_FILE, 'r') as f:
                 try:
@@ -45,7 +45,7 @@ class MotorKontrolArayuzu:
             self.json_kaydet()
 
     def json_kaydet(self):
-        """Mevcut konum verilerini JSON'a kaydeder."""
+        # Mevcut konum verilerini JSON'a kaydeder.
         with open(JSON_FILE, 'w') as f:
             json.dump(self.data, f, indent=2)
 
@@ -73,7 +73,7 @@ class MotorKontrolArayuzu:
             self.ser.write((komut + '\n').encode('utf-8'))
 
     def durum_sorgula(self):
-        """200ms'de bir Arduino'dan anlık durum ve konum ister."""
+        #200ms'de bir Arduino'dan anlık durum ve konum ister.
         self.seri_yaz('P')
 
         if self.ser and self.ser.is_open:

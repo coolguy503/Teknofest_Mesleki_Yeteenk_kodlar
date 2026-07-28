@@ -1,6 +1,7 @@
 *.zip
 *.xlsx
 .venv/
-
+venv/
+teknofest_env/
 
 
