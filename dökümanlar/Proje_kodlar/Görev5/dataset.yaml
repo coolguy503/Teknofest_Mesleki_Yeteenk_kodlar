@@ -1,0 +1,9 @@
+path: C:/Users/alp/OneDrive/Masaüstü/ob #path dinamik olmalı.
+train: images/train
+val: images/val
+
+names:
+  0: yaya_gecidi
+  1: kasisli_yol_tumsek
+  2: hemzemin_gecit
+  3: park_yasak

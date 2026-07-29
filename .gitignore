@@ -3,5 +3,7 @@
 .venv/
 venv/
 teknofest_env/
-
-
+images/
+labels/
+yolo261.pt
+runs/
